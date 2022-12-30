@@ -24,3 +24,7 @@ Route::view('/pages/styles', 'front.pages.styles');
 Route::get('/pages/{name}', [HomeController::class, 'show']);
 Route::view('/dashboard', 'layouts.dashboard');
 Route::get('/dashboard/categories', [CategoriesController::class, 'index'])->name('dashboard.categories.index');
+Route::get('/dashboard/categories/create', [CategoriesController::class, 'create'])
+    ->name('dashboard.categories.create');
+Route::post('/dashboard/categories', [CategoriesController::class, 'store'])
+    ->name('dashboard.categories.store');

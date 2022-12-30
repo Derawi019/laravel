@@ -15,24 +15,26 @@ class CategoriesSeeder extends Seeder
      */
     public function run()
     {
-        for ($i = 0; $i < 100; $i++) {
 
 
-            DB::table('categories')->insert([
-                'name' => 'TV & Audios' . $i,
-                'slug' => 'tv-audios' . $i,
-                'created_at' => now(),
-            ]);
-        }
+
+        DB::table('categories')->insert([
+            'name' => 'TV & Audios',
+            'slug' => 'tv-audios',
+            'parentId' => null,
+            'created_at' => now(),
+        ]);
+
         DB::table('categories')->insert([
             'name' => 'Smart Phones',
             'slug' => 'smart-phones',
+            'parentId' => null,
             'created_at' => now(),
         ]);
         DB::table('categories')->insert([
             'name' => 'Smart Television',
             'slug' => 'smart-television',
-            'parent-id' => 1,
+            'parentId' => 1,
             'created_at' => now(),
         ]);
     }

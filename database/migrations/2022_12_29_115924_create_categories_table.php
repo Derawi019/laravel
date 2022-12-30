@@ -19,11 +19,11 @@ return new class extends Migration
             $table->string('name', 150);
 
             $table->string('image-path', 500)->nullable();
-            $table->unsignedBigInteger('parent-id')->nullable();
+            $table->unsignedBigInteger('parentId')->nullable();
             $table->string('slug')->unique();
 
             $table->timestamps();
-            $table->foreign('parent-id')->references('id')->on('categories')->nullOnDelete();
+            $table->foreign('parentId')->references('id')->on('categories')->nullOnDelete();
         });
     }
 
